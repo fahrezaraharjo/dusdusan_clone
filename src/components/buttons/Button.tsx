@@ -1,9 +1,5 @@
+import { ButtonProps } from '@/interfaces/interfaces';
 import React from 'react';
-
-interface ButtonProps {
-  text: string;
-  variant: 'filled' | 'outlined';
-}
 
 export const Button: React.FC<ButtonProps> = ({ text, variant }) => {
   const baseClasses = 'px-4 py-2 text-sm font-semibold rounded';

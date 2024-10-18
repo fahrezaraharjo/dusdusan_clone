@@ -1,7 +1,7 @@
 "use client"; // Ensure this component is a Client Component
 
+import { NavigationProps } from '@/interfaces/interfaces';
 import React, { memo } from 'react';
-import { NavigationProps } from './NavigationTypes'; // Import the interface
 
 const Navigation: React.FC<NavigationProps> = memo(({ categories = [] }) => { // Default to an empty array
   const handleCategoryClick = (category: string) => {

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeModeScript } from "flowbite-react";
+import Header from "@/components/layout/Header";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,10 +28,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <ThemeModeScript />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`} style={{height: '100vh'}}
       >
-        {children}
+        <div className="h-screen bg-gray-100 flex flex-col justify-between items-center">
+          <div className="bg-[#000] max-w-[480px] w-full rounded shadow-lg flex flex-col items-center flex-wrap">
+            <Header />
+          </div>
+          {children}
+          <div className="bg-black max-w-[480px] w-full">
+            <h3 className="text-white text-center">Hello</h3>
+          </div>
+        </div>
       </body>
     </html>
   );
