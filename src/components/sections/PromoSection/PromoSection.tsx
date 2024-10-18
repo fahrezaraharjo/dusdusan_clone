@@ -1,4 +1,5 @@
 // PromoSection.tsx
+import LinkButton from '@/components/common/LinkButton';
 import { PromoSectionProps } from '@/interfaces/interfaces';
 import React from 'react';
 
@@ -8,9 +9,7 @@ const PromoSection: React.FC<PromoSectionProps> = ({ promoItems }) => {
       <div className="bg-white rounded-lg p-4 shadow-lg w-full">
         <div className="flex justify-between items-center mb-4">
           <span className="text-xl font-semibold text-gray-800">Promo</span>
-          <a href="/promo" className="text-blue-500 hover:underline">
-            Lihat Semua <i className="anticon anticon-right" />
-          </a>
+          <LinkButton text="Lihat Semua" href="/promo" variant="orange" />
         </div>
         <div className="overflow-x-auto scrollbar-hidden">
           <div className="flex space-x-4 py-2">
