@@ -1,32 +1,27 @@
 // @/components/sections/BrandSection/BrandSection.tsx
 import { Brand } from '@/interfaces/interfaces';
 import React from 'react';
+import LinkButton from '@/components/common/LinkButton';
+import BrandCard from './BrandCard';
 
 interface BrandSectionProps {
-  brands: Brand[];
+    brands: Brand[];
 }
 
 const BrandSection: React.FC<BrandSectionProps> = ({ brands }) => {
-  return (
-    <div id="brand" className="max-w-[480px] w-full flex flex-col items-start">
-      <div className="bar flex justify-between items-center w-full mb-4">
-        <h2>Brand Terpilih</h2>
-        <div role="button" tabIndex={0} style={{ outline: 'none' }}>
-          <span className="more">Lihat Semua <i className="anticon anticon-right" /></span>
-        </div>
-      </div>
-      <div className="brands-wrapper flex flex-wrap justify-start">
-        {brands.map((brand) => (
-          <a key={brand.id} href={brand.link} className="flex items-center justify-center w-1/2 p-2">
-            <div className="brand-shadow bg-white rounded shadow-md overflow-hidden">
-              <img src={brand.logoUrl} className="image object-cover h-20 w-full" alt={brand.name} />
-              <div className="label text-center p-2">{brand.name}</div>
+    return (
+        <div id="brand" className="new-landing-container">
+            <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-semibold">Brand Terpilih</h2>
+                <LinkButton text="Lihat Semua" href="/semua-brand" variant="orange" />
             </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  );
+            <div className="flex overflow-x-auto space-x-4 py-2 scrollbar-hide"> 
+                {brands.map((brand) => (
+                    <BrandCard key={brand.id} brand={brand} />
+                ))}
+            </div>
+        </div>
+    );
 };
 
 export default BrandSection;
