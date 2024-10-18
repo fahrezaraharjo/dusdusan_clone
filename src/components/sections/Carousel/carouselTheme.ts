@@ -1,14 +1,13 @@
-// Custom theme for the carousel
 const carouselTheme = {
     root: {
       base: 'relative h-full w-full',
-      leftControl: 'absolute left-0 top-0 hidden', // Hide the left control
-      rightControl: 'absolute right-0 top-0 hidden', // Hide the right control
+      leftControl: 'absolute left-0 top-0 hidden', 
+      rightControl: 'absolute right-0 top-0 hidden',
     },
     indicators: {
       active: {
-        off: 'bg-white/50 hover:bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800', // Inactive style
-        on: 'bg-[#00b0b9] dark:bg-gray-800', // Active style
+        off: 'bg-white/50 hover:bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800', 
+        on: 'bg-[#00b0b9] dark:bg-gray-800',
       },
       base: 'h-3 w-6 rounded-full',
       wrapper: 'absolute bottom-5 left-1/2 flex -translate-x-1/2 space-x-3',

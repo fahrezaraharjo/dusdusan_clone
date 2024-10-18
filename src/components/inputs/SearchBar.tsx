@@ -1,6 +1,4 @@
-// src/app/components/ui/SearchBar.tsx
-"use client"; // Add this line to mark the component as a client component
-
+"use client";
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
