@@ -5,7 +5,7 @@ import useSWR from 'swr';
 import Navigation from '@/components/navigation/Navigation';
 import CarouselComponent from '@/components/sections/Carousel/CarouselComponent';
 import PromoSection from '@/components/sections/PromoSection/PromoSection';
-import { categories, categoriesProduct, brands, menarikArticles, newProducts, bestSellingProducts, popularProducts, companyInfo, supportInfo, socialMediaLinks, addressInfo, currentYear } from '@/data/StaticData';
+import { categories, categoriesProduct, brands, newProducts, bestSellingProducts, popularProducts, companyInfo, supportInfo, socialMediaLinks, addressInfo, currentYear } from '@/data/StaticData';
 import KategoriProduk from '@/components/sections/KategoriProduk/KategoriProduk';
 import MenarikUntukDisimak from '@/components/sections/MenarikUntukDisimak/MenarikUntukDisimak';
 import BrandSection from '@/components/sections/BrandSection/BrandSection';
@@ -21,13 +21,15 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 const Home: React.FC = () => {
     const { data: promoData, error: promoError } = useSWR('https://apigateway.dusdusan.com/promoBanner/home', fetcher);
     const { data: carouselData, error: carouselError } = useSWR('https://apigateway.dusdusan.com/homepageContent', fetcher);
+    const { data: articlesData, error: articlesError } = useSWR('https://apigateway.dusdusan.com/articles?limit=5&orderby=publishDate&sortby=desc', fetcher);
 
     const isPromoLoading = !promoData;
     const isCarouselLoading = !carouselData;
-    const isLoading = isPromoLoading || isCarouselLoading;
-    
+    const isArticlesLoading = !articlesData;
+    const isLoading = isPromoLoading || isCarouselLoading || isArticlesLoading;
+
     // Handle errors
-    if (promoError || carouselError) {
+    if (promoError || carouselError || articlesError) {
         return <div>Error loading data. Please try again later.</div>;
     }
 
@@ -67,7 +69,7 @@ const Home: React.FC = () => {
             {isLoading ? (
                 <Skeleton height={50} width="100%" className="mb-2" />
             ) : (
-                <MenarikUntukDisimak articles={menarikArticles} />
+                <MenarikUntukDisimak articles={articlesData.data} />
             )}
 
             {/* Brand Terpilih */}

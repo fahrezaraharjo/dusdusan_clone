@@ -1,13 +1,11 @@
+"use client";
+
+import React from 'react';
 import LinkButton from '@/components/common/LinkButton';
 import { MenarikArticle } from '@/interfaces/interfaces';
-import React from 'react';
 import Image from 'next/image';
 
-interface MenarikUntukDisimakProps {
-    articles: MenarikArticle[];
-}
-
-const MenarikUntukDisimak: React.FC<MenarikUntukDisimakProps> = ({ articles }) => {
+const MenarikUntukDisimak: React.FC<{ articles: MenarikArticle[] }> = ({ articles }) => {
     return (
         <div className="category-wrapper w-full bg-white mb-4 pb-0">
             <div className="bar flex justify-between items-center px-4 py-2">
@@ -27,31 +25,54 @@ const MenarikUntukDisimak: React.FC<MenarikUntukDisimakProps> = ({ articles }) =
             </div>
             <div className="article-list grid grid-cols-1 gap-3 px-4">
                 {articles.map((article) => (
-                    <div key={article.id} className="article-row flex mb-3">
-                        <div className="wrapper w-1/3">
-                            <Image
-                                src={article.imageUrl}
-                                alt={article.title}
-                                width={300}
-                                height={200}
-                                className="rounded-md object-cover"
-                                quality={64}
-                                priority={false}
-                                layout="responsive"
-                            />
-                        </div>
-                        <div className="flex flex-col justify-between w-2/3 pl-3">
-                            <div>
-                                <div className="article-category-title text-xs text-orange-500">{article.category}</div>
-                                <div className="article-title text-sm font-semibold line-clamp-2">{article.title}</div>
-                            </div>
-                            <div className="text-[14px] font-semibold text-[#ffad00] mt-1">{article.date}</div>
-                        </div>
-                    </div>
+                    <ArticleRow key={article.id} article={article} />
                 ))}
             </div>
         </div>
     );
 };
+
+const ArticleRow: React.FC<{ article: MenarikArticle }> = React.memo(({ article }) => {
+    // Utility function to format the date
+    const formatDate = (dateString: string) => {
+        const options: Intl.DateTimeFormatOptions = {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+        };
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-GB', options).replace('.', '');
+    };
+
+    return (
+        <div className="article-row flex mb-3">
+            <div className="wrapper w-1/3">
+                <Image
+                    src={article.imagePath}
+                    alt={article.name}
+                    width={300}
+                    height={200}
+                    className="rounded-md object-cover"
+                    quality={64}
+                    priority={false}
+                    layout="responsive"
+                    placeholder="blur"
+                    blurDataURL="/path/to/your/placeholder-image.png"
+                />
+            </div>
+            <div className="flex flex-col justify-between w-2/3 pl-3">
+                <div>
+                    <div className="article-category-title text-xs text-orange-500">{article.category.categoryName}</div>
+                    <div className="article-title text-sm font-semibold line-clamp-2">{article.name}</div>
+                </div>
+                <div className="text-[14px] font-semibold text-[#ffad00] mt-1">
+                    {formatDate(article.publishDate)}
+                </div>
+            </div>
+        </div>
+    );
+});
+
+ArticleRow.displayName = 'ArticleRow';
 
 export default MenarikUntukDisimak;

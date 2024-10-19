@@ -26,9 +26,9 @@ export interface NavigationProps {
     categories?: string[];
 }
 export interface PromoItem {
-    code: string;                      // Promo code (optional)
-    endDate: string;                  // End date of the promo
-    id: number;                       // Unique identifier for the promo
+    code: string;                    
+    endDate: string;                 
+    id: number;                      
     imagePath: string;                // URL of the promo image
     name: string;                     // Name of the promo
     promotionName: string;            // Display name of the promotion
@@ -46,12 +46,17 @@ export interface CategoryProduct {
     name: string;
     imageUrl: string;
 }
+// src/interfaces/MenarikArticle.ts
 export interface MenarikArticle {
-    id: number;
-    imageUrl: string;
-    category: string;
-    title: string;
-    date: string;
+    id: string; // Unique identifier for the article
+    name: string; // Title of the article
+    imagePath: string; // Path to the article's image
+    publishDate: string; // Date when the article was published
+    category: {
+        categoryId: string; // Unique identifier for the category
+        categoryName: string; // Name of the category
+    };
+    // Add any additional fields as needed based on your API response
 }
 export interface LinkButtonProps {
     text: string;
