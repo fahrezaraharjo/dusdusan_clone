@@ -27,22 +27,22 @@ const Home: React.FC = () => {
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/dusdusan/',
-      icon: '/assets/images/d4cfe361eb6342f185931e9996e15f29.png',
+      icon: '/assets/instagram.webp',
     },
     {
       name: 'Facebook',
       url: 'https://web.facebook.com/DusdusanID',
-      icon: '/assets/images/9bad4abb1922821a55f1f84071156093.png',
+      icon: '/assets/facebook.webp',
     },
     {
       name: 'TikTok',
       url: 'https://vt.tiktok.com/ZSJj9Q8sT/',
-      icon: '/assets/images/499d0f4d5ed7ec5fc6eabd1fe8534c3c.png',
+      icon: '/assets/tiktok.webp',
     },
     {
       name: 'YouTube',
       url: 'https://www.youtube.com/DusdusanID',
-      icon: '/assets/images/d53b69b350197784eefb482350e0d961.png',
+      icon: '/assets/youtube.webp',
     },
   ];
 

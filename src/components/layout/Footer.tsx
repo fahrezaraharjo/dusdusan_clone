@@ -7,7 +7,7 @@ const FooterNav: FC = () => {
   const [active, setActive] = useState<string>('Beranda');
 
   return (
-    <div className='w-full flex justify-center'>
+    <div className='w-full flex justify-center shadow-lg'>
       <nav className="bg-[#01b0b9] text-white flex justify-around items-center h-16 shadow-lg z-50 max-w-[480px] w-full sticky bottom-0">
         {navItems.map(item => (
           <FooterNavItem
