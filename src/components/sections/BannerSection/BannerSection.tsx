@@ -1,4 +1,4 @@
-import { BannerSectionProps } from '@/interfaces/interfaces';
+import { BannerSectionProps } from '@/types/Banner.types';
 import Image from 'next/image';
 import React from 'react';
 

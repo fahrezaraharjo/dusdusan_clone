@@ -1,8 +1,8 @@
 // @/components/sections/BrandSection/BrandSection.tsx
-import { Brand } from '@/interfaces/interfaces';
 import React from 'react';
 import LinkButton from '@/components/common/LinkButton';
 import BrandCard from './BrandCard';
+import { Brand } from '@/types/brand.types';
 
 interface BrandSectionProps {
     brands: Brand[];

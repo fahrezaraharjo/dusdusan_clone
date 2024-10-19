@@ -1,4 +1,4 @@
-import { FooterProps } from '@/interfaces/interfaces';
+import { FooterProps } from '@/types/Footer.types';
 import { FC } from 'react';
 
 const Footer: FC<FooterProps> = ({ company, support, socialMedia, address, year }) => {

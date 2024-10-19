@@ -1,5 +1,6 @@
 "use client";
 
+import { FooterNavItemProps } from '@/types/Footer.types';
 import { FC, useState } from 'react';
 import { FaHome, FaHeart, FaShoppingCart, FaUser, FaList } from 'react-icons/fa';
 
@@ -30,13 +31,6 @@ const navItems = [
   { icon: <FaShoppingCart />, label: 'Keranjang' },
   { icon: <FaUser />, label: 'Profile' },
 ];
-
-interface FooterNavItemProps {
-  icon: JSX.Element;
-  label: string;
-  active: string;
-  setActive: (label: string) => void;
-}
 
 const FooterNavItem: FC<FooterNavItemProps> = ({ icon, label, active, setActive }) => {
   return (

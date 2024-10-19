@@ -1,4 +1,6 @@
-import { Brand, CategoryProduct, MenarikArticle } from "@/interfaces/interfaces";
+import { MenarikArticle } from "@/types/articles.types";
+import { Brand } from "@/types/brand.types";
+import { CategoryProduct } from "@/types/Product.types";
 
 export const categories: string[] = [
   'PROMO',

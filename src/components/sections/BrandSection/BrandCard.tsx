@@ -1,7 +1,7 @@
 // @/components/sections/BrandSection/BrandCard.tsx
 import React from 'react';
 import Image from 'next/image';
-import { Brand } from '@/interfaces/interfaces';
+import { Brand } from '@/types/brand.types';
 
 interface BrandCardProps {
     brand: Brand;

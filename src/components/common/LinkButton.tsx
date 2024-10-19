@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { LinkButtonProps } from '@/interfaces/interfaces';
+import { LinkButtonProps } from '@/types/Common.types';
 
 const LinkButton: React.FC<LinkButtonProps> = ({ text, href, variant = 'yellow', className = '' }) => {
   const baseStyles = 'flex items-center rounded-md font-normal text-[10px] leading-[25px] py-0 px-2';

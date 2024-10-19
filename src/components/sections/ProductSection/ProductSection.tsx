@@ -1,14 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { Product } from '@/interfaces/interfaces';
 import LinkButton from '@/components/common/LinkButton';
-
-interface ProductSectionProps {
-  title: string;
-  backgroundClass: string;
-  products: Product[];
-  viewAllLink: string;
-}
+import { ProductSectionProps } from '@/types/Product.types';
 
 const ProductSection: React.FC<ProductSectionProps> = ({ title, backgroundClass, products, viewAllLink }) => {
   return (
@@ -50,9 +43,8 @@ const ProductSection: React.FC<ProductSectionProps> = ({ title, backgroundClass,
                     </div>
                     {product.stockStatus && (
                       <span
-                        className={`stock-status text-xs mt-1 ${
-                          product.stockStatus === 'In Stock' ? 'text-green-600' : 'text-red-500'
-                        }`}
+                        className={`stock-status text-xs mt-1 ${product.stockStatus === 'In Stock' ? 'text-green-600' : 'text-red-500'
+                          }`}
                       >
                         {product.stockStatus}
                       </span>

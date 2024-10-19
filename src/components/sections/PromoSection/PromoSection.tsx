@@ -1,8 +1,8 @@
 import LinkButton from '@/components/common/LinkButton';
-import { PromoSectionProps } from '@/interfaces/interfaces';
 import Link from 'next/link';
 import React, { memo } from 'react';
 import Image from 'next/image';
+import { PromoSectionProps } from '@/types/Promo.types';
 
 const PromoSection: React.FC<PromoSectionProps> = memo(({ promoItems }) => {
   if (promoItems.length === 0) {

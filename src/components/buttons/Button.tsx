@@ -1,4 +1,4 @@
-import { ButtonProps } from '@/interfaces/interfaces';
+import { ButtonProps } from '@/types/Common.types';
 import React from 'react';
 
 export const Button: React.FC<ButtonProps> = ({ text, variant }) => {

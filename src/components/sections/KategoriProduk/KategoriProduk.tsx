@@ -1,5 +1,5 @@
 // src/components/sections/KategoriProduk/KategoriProduk.tsx
-import { CategoryProduct } from '@/interfaces/interfaces';
+import { CategoryProduct } from '@/types/Product.types';
 import React from 'react';
 
 interface KategoriProdukProps {
@@ -40,7 +40,7 @@ const KategoriProduk: React.FC<KategoriProdukProps> = ({ categoriesProduct }) =>
                 fontWeight: '400',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
-                textOverflow: 'ellipsis', // Truncate long text with ellipsis
+                textOverflow: 'ellipsis',
                 textAlign: 'center',
               }}
             >

@@ -2,8 +2,8 @@
 
 import React from 'react';
 import LinkButton from '@/components/common/LinkButton';
-import { MenarikArticle } from '@/interfaces/interfaces';
 import Image from 'next/image';
+import { MenarikArticle } from '@/types/articles.types';
 
 const MenarikUntukDisimak: React.FC<{ articles: MenarikArticle[] }> = ({ articles }) => {
     return (
