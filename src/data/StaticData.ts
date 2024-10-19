@@ -209,3 +209,46 @@ export const newProducts = [
       likes: 2,
   },
 ];
+
+export const companyInfo = {
+  name: 'Dusdusan.com',
+  availabilityDays: 'Senin - Minggu',
+  availabilityTime: '08.00 - 17.00 WIB',
+};
+
+export const supportInfo = {
+  chat: 'Live Chat Dusdusan.com',
+  email: 'support@dusdusan.com',
+};
+
+export const socialMediaLinks = [
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/dusdusan/',
+    icon: '/assets/instagram.webp',
+  },
+  {
+    name: 'Facebook',
+    url: 'https://web.facebook.com/DusdusanID',
+    icon: '/assets/facebook.webp',
+  },
+  {
+    name: 'TikTok',
+    url: 'https://vt.tiktok.com/ZSJj9Q8sT/',
+    icon: '/assets/tiktok.webp',
+  },
+  {
+    name: 'YouTube',
+    url: 'https://www.youtube.com/DusdusanID',
+    icon: '/assets/youtube.webp',
+  },
+];
+
+export const addressInfo = {
+  companyName: 'PT DUSDUSAN DOTCOM INDONESIA',
+  street: 'Jl. Kebon Jeruk Raya 1A, 1B, 1C',
+  city: 'Kota Adm. Jakarta Barat',
+  province: 'Prov. DKI Jakarta',
+};
+
+export const currentYear = new Date().getFullYear();

@@ -1,8 +1,11 @@
+"use client";
+
 import React from 'react';
+import useSWR from 'swr';
 import Navigation from '@/components/navigation/Navigation';
 import CarouselComponent from '@/components/sections/Carousel/CarouselComponent';
-import { bestSellingProducts, brands, categories, categoriesProduct, images, menarikArticles, newProducts, popularProducts, promoItems } from '@/data/StaticData';
 import PromoSection from '@/components/sections/PromoSection/PromoSection';
+import { categories, categoriesProduct, brands, menarikArticles, newProducts, bestSellingProducts, popularProducts, companyInfo, supportInfo, socialMediaLinks, addressInfo, currentYear } from '@/data/StaticData';
 import KategoriProduk from '@/components/sections/KategoriProduk/KategoriProduk';
 import MenarikUntukDisimak from '@/components/sections/MenarikUntukDisimak/MenarikUntukDisimak';
 import BrandSection from '@/components/sections/BrandSection/BrandSection';
@@ -10,108 +13,121 @@ import BannerSection from '@/components/sections/BannerSection/BannerSection';
 import ProductSection from '@/components/sections/ProductSection/ProductSection';
 import InfoSection from '@/components/sections/InfoSection/InfoSection';
 import Footer from '@/components/sections/ButtomSection/BottomSection';
+import Skeleton from 'react-loading-skeleton'; 
+import 'react-loading-skeleton/dist/skeleton.css'; 
+
+const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const Home: React.FC = () => {
-  const companyInfo = {
-    name: 'Dusdusan.com',
-    availabilityDays: 'Senin - Minggu',
-    availabilityTime: '08.00 - 17.00 WIB',
-  };
+    const { data: promoData, error: promoError } = useSWR('https://apigateway.dusdusan.com/promoBanner/home', fetcher);
+    const { data: carouselData, error: carouselError } = useSWR('https://apigateway.dusdusan.com/homepageContent', fetcher);
 
-  const supportInfo = {
-    chat: 'Live Chat Dusdusan.com',
-    email: 'support@dusdusan.com',
-  };
+    const isPromoLoading = !promoData;
+    const isCarouselLoading = !carouselData;
+    const isLoading = isPromoLoading || isCarouselLoading;
+    
+    // Handle errors
+    if (promoError || carouselError) {
+        return <div>Error loading data. Please try again later.</div>;
+    }
 
-  const socialMediaLinks = [
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/dusdusan/',
-      icon: '/assets/instagram.webp',
-    },
-    {
-      name: 'Facebook',
-      url: 'https://web.facebook.com/DusdusanID',
-      icon: '/assets/facebook.webp',
-    },
-    {
-      name: 'TikTok',
-      url: 'https://vt.tiktok.com/ZSJj9Q8sT/',
-      icon: '/assets/tiktok.webp',
-    },
-    {
-      name: 'YouTube',
-      url: 'https://www.youtube.com/DusdusanID',
-      icon: '/assets/youtube.webp',
-    },
-  ];
+    return (
+        <div className="max-w-[480px] w-full flex flex-col items-start">
+            {/* Navigation Section */}
+            {isLoading ? (
+                <Skeleton height={50} width="100%" className="mb-2" />
+            ) : (
+                <Navigation categories={categories} />
+            )}
 
-  const addressInfo = {
-    companyName: 'PT DUSDUSAN DOTCOM INDONESIA',
-    street: 'Jl. Kebon Jeruk Raya 1A, 1B, 1C',
-    city: 'Kota Adm. Jakarta Barat',
-    province: 'Prov. DKI Jakarta',
-  };
+            {/* Banner Section */}
+            <div className="flex flex-col items-start w-[480px] h-[485px] mt-1">
+                {isCarouselLoading ? (
+                    <Skeleton height={485} width="100%" />
+                ) : (
+                    <CarouselComponent images={carouselData.banner.memberNonReseller} />
+                )}
+            </div>
 
-  const currentYear = new Date().getFullYear();
+            {/* Promo Section */}
+            {isPromoLoading ? (
+                <Skeleton height={200} width="100%" className="mt-4" />
+            ) : (
+                <PromoSection promoItems={promoData.data} />
+            )}
 
-  return (
-    <div className="max-w-[480px] w-full flex flex-col items-start">
-      {/* navigation section */}
-      <Navigation categories={categories} />
-      {/* banner section */}
-      <div className="flex flex-col items-start w-[480px] h-[485px] mt-1">
-        <CarouselComponent images={images} />
-      </div>
-      {/* promo section */}
-      <PromoSection promoItems={promoItems} />
-      {/* kategori produk */}
-      <KategoriProduk categoriesProduct={categoriesProduct} />
-      {/* Menarik untuk disimak */}
-      <MenarikUntukDisimak articles={menarikArticles} />
-      {/* Brand Terpilih */}
-      <BrandSection brands={brands} />
-      {/* Banner Section  */}
-      <BannerSection
-        imageUrl="/assets/banner.webp"
-        altText="Promotional Banner"
-        link="https://ddcmart.com/"
-      />
-      {/* Produk Section */}
-      <ProductSection
-        title="Produk Terlaris"
-        backgroundClass="bg-gradient-to-tr from-teal-300 to-teal-500"
-        products={bestSellingProducts}
-        viewAllLink="/semua-produk"
-      />
-      <ProductSection
-        title="Produk Terpopular"
-        backgroundClass="bg-white"
-        products={popularProducts}
-        viewAllLink="/semua-produk"
-      />
-      <ProductSection
-        title="Produk Terbaru"
-        backgroundClass="bg-white"
-        products={newProducts}
-        viewAllLink="/semua-produk"
-      />
-      {/* Info Section */}
-      <div className="flex flex-col items-start w-[480px] h-[485px] mt-1 ">
-        <InfoSection />
-      </div>
-      {/*footer*/}
-      <div className='mt-1'>
-        <Footer
-          company={companyInfo}
-          support={supportInfo}
-          socialMedia={socialMediaLinks}
-          address={addressInfo}
-          year={currentYear}
-        />
-      </div>
-    </div>
-  );
+            {/* Kategori Produk */}
+            {isLoading ? (
+                <Skeleton height={50} width="100%" className="mb-2" />
+            ) : (
+                <KategoriProduk categoriesProduct={categoriesProduct} />
+            )}
+
+            {/* Menarik untuk disimak */}
+            {isLoading ? (
+                <Skeleton height={50} width="100%" className="mb-2" />
+            ) : (
+                <MenarikUntukDisimak articles={menarikArticles} />
+            )}
+
+            {/* Brand Terpilih */}
+            {isLoading ? (
+                <Skeleton height={50} width="100%" className="mb-2" />
+            ) : (
+                <BrandSection brands={brands} />
+            )}
+
+            {/* Banner Section */}
+            {isLoading ? (
+                <Skeleton height={200} width="100%" className="mt-4" />
+            ) : (
+                <BannerSection
+                    imageUrl="/assets/banner.webp"
+                    altText="Promotional Banner"
+                    link="https://ddcmart.com/"
+                />
+            )}
+
+            {/* Produk Sections */}
+            {["Produk Terlaris", "Produk Terpopular", "Produk Terbaru"].map((title, index) => (
+                isLoading ? (
+                    <Skeleton key={index} height={50} width="100%" className="mb-2" />
+                ) : (
+                    <ProductSection
+                        key={index}
+                        title={title}
+                        backgroundClass="bg-white"
+                        products={index === 0 ? bestSellingProducts : index === 1 ? popularProducts : newProducts}
+                        viewAllLink="/semua-produk"
+                    />
+                )
+            ))}
+
+            {/* Info Section */}
+            <div className="flex flex-col items-start w-[480px] h-[485px] mt-1 ">
+                {isLoading ? (
+                    <Skeleton height={485} width="100%" />
+                ) : (
+                    <InfoSection />
+                )}
+            </div>
+
+            {/* Footer */}
+            <div className='mt-1'>
+                {isLoading ? (
+                    <Skeleton height={100} width="100%" className="mb-2" />
+                ) : (
+                    <Footer
+                        company={companyInfo}
+                        support={supportInfo}
+                        socialMedia={socialMediaLinks}
+                        address={addressInfo}
+                        year={currentYear}
+                    />
+                )}
+            </div>
+        </div>
+    );
 };
 
 export default Home;
