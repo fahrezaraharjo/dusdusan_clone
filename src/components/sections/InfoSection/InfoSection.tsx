@@ -45,7 +45,7 @@ const infoItems = [
 
 const InfoSection: React.FC = () => {
   return (
-    <div className="w-full h-full p-6 rounded-lg shadow-lg bg-[#00b0b9] flex flex-col justify-center items-center">
+    <div className="w-full h-full p-6 shadow-lg bg-[#00b0b9] flex flex-col justify-center items-center">
       <div className="relative mb-4">
         <h2 className="title text-base mb-1 font-semibold text-white">{infoItems[0].title}</h2>
         <div className="absolute h-[3px] w-[100px] bg-white bottom-0 left-1/2 transform -translate-x-1/2"></div>

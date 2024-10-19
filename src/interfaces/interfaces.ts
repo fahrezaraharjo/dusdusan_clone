@@ -30,10 +30,10 @@ export interface MenarikArticle {
     date: string;
 }
 export interface LinkButtonProps {
-    text: string; 
-    href: string; 
-    variant?: 'yellow' | 'orange'; 
-    className?: string; 
+    text: string;
+    href: string;
+    variant?: 'yellow' | 'orange';
+    className?: string;
 }
 export interface Brand {
     id: number;
@@ -51,6 +51,31 @@ export interface Product {
     name: string;
     price: string;
     imageUrl: string;
-    stockStatus?: string; 
+    stockStatus?: string;
     likes?: number;
 }
+
+export interface FooterProps {
+    company: {
+      name: string;
+      availabilityDays: string;
+      availabilityTime: string;
+    };
+    support: {
+      chat: string;
+      email: string;
+    };
+    socialMedia: {
+      name: string;
+      url: string;
+      icon: string;
+    }[];
+    address: {
+      companyName: string;
+      street: string;
+      city: string;
+      province: string;
+    };
+    year: number;
+  }
+  
