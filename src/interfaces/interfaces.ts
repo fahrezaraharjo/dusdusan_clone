@@ -1,4 +1,3 @@
-
 export interface BannerItem {
     id: number;
     image: string;
@@ -18,63 +17,70 @@ export interface BannerResponse {
         tds: null;
     };
 }
+
 export interface ButtonProps {
     text: string;
     variant: 'filled' | 'outlined';
 }
+
 export interface NavigationProps {
     categories?: string[];
 }
+
 export interface PromoItem {
-    code: string;                    
-    endDate: string;                 
-    id: number;                      
-    imagePath: string;                // URL of the promo image
-    name: string;                     // Name of the promo
-    promotionName: string;            // Display name of the promotion
-    rating: string;                   // Rating (optional, can be empty)
-    routePrefix: string;              // Route prefix for linking
-    standardRetailPrice: number;      // Standard retail price (optional)
-    uuid: string;                     // Unique identifier as a UUID
+    code: string;
+    endDate: string;
+    id: number;
+    imagePath: string;
+    name: string;
+    promotionName: string;
+    rating: string;
+    routePrefix: string;
+    standardRetailPrice: number;
+    uuid: string;
 }
 
 export interface PromoSectionProps {
-    promoItems: PromoItem[];          // Array of promo items
+    promoItems: PromoItem[];
 }
+
 export interface CategoryProduct {
     id: number;
     name: string;
     imageUrl: string;
 }
-// src/interfaces/MenarikArticle.ts
+
 export interface MenarikArticle {
-    id: string; // Unique identifier for the article
-    name: string; // Title of the article
-    imagePath: string; // Path to the article's image
-    publishDate: string; // Date when the article was published
+    id: string;
+    name: string;
+    imagePath: string;
+    publishDate: string;
     category: {
-        categoryId: string; // Unique identifier for the category
-        categoryName: string; // Name of the category
+        categoryId: string;
+        categoryName: string;
     };
-    // Add any additional fields as needed based on your API response
 }
+
 export interface LinkButtonProps {
     text: string;
     href: string;
     variant?: 'yellow' | 'orange';
     className?: string;
 }
+
 export interface Brand {
     id: number;
     name: string;
     logoUrl: string;
     link: string;
 }
+
 export interface BannerSectionProps {
     imageUrl: string;
     altText: string;
     link: string;
 }
+
 export interface Product {
     id: number;
     name: string;
