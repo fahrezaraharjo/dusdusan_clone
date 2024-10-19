@@ -1,4 +1,3 @@
-import { MenarikArticle } from "@/types/articles.types";
 import { Brand } from "@/types/brand.types";
 import { CategoryProduct } from "@/types/Product.types";
 
@@ -50,23 +49,6 @@ export const categoriesProduct: CategoryProduct[] = [
   { id: 10, name: 'Dapur', imageUrl: 'https://images.dusdusan.com/article/OOsayb9i1607483674_ICON%20WEB-08.png' },
   { id: 11, name: 'Makanan dan Minuman', imageUrl: 'https://images.dusdusan.com/article/Yq083Twe1607483734_ICON%20WEB-10.png' },
   { id: 12, name: 'Lainnya', imageUrl: '/assets/svg/e25960fc52951b43eca7cf23b3c1617a.svg' },
-];
-
-export const menarikArticles: MenarikArticle[] = [
-  {
-    id: 1,
-    imageUrl: 'https://images.dusdusan.com/product/W0s3Fmrp1717993047_promo_beli_bodimax_running_machine_gratis_bodimax_wellness_yoga_matt_b_3_juni_24_2_.jpg',
-    category: 'Info Promo',
-    title: 'Makin Sehat Berolahraga Beli Alatnya di Dusdusan Banyak Bonusan!!',
-    date: '10 Jun 2024',
-  },
-  {
-    id: 2,
-    imageUrl: 'https://images.dusdusan.com/product/qk9ofisn1717993325_promo_beli_alexa_kasur_lantai_150_x_200_gratis_sajadah_premium_3_juni_24_1_.jpg',
-    category: 'Info Promo',
-    title: 'Belanja Makin Hemat! Hadiahnya Bikin Makin Rajin Ibadah',
-    date: '10 Jun 2024',
-  },
 ];
 
 export const brands: Brand[] = [
