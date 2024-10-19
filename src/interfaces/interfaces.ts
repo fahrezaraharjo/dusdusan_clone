@@ -51,5 +51,6 @@ export interface Product {
     name: string;
     price: string;
     imageUrl: string;
-    stockStatus?: string;
+    stockStatus?: string; 
+    likes?: number;
 }

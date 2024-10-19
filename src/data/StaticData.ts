@@ -133,3 +133,79 @@ export const bestSellingProducts = [
       imageUrl: '/assets/productTerlaris5.jpg',
   },
 ];
+
+export const popularProducts = [
+  {
+      id: 1,
+      name: 'Kangaroo Emerald Cookware Set 5',
+      price: 'Rp 259,000/Set',
+      imageUrl: '/assets/popularProducts1.jpg',
+      likes: 4289,
+  },
+  {
+      id: 2,
+      name: 'Homecook Presto Set Of 5',
+      price: 'Rp 494,000/Set',
+      imageUrl: '/assets/popularProducts2.jpg',
+      likes: 3478,
+  },
+  {
+      id: 3,
+      name: 'Smart Mom Marianne Frosty Set Of 11',
+      price: 'Rp 259,000/Set',
+      imageUrl: '/assets/popularProducts3.jpg',
+      likes: 2938,
+  },
+  {
+      id: 4,
+      name: 'Technoplast Dishes Keeper Set 3 Susun',
+      price: 'Rp 209,000/Set',
+      imageUrl: '/assets/popularProducts4.jpg',
+      likes: 2898,
+  },
+  {
+      id: 5,
+      name: 'Cypruz Marble Cookware Set of 7 pcs',
+      price: 'Rp 969,000/Set',
+      imageUrl: '/assets/popularProducts5.jpg',
+      likes: 2734,
+  },
+];
+
+export const newProducts = [
+  {
+      id: 1,
+      name: 'Technoplast New Aoki Neon Bottle 530 Ml Set of 6',
+      price: 'Rp 73,900/Set',
+      imageUrl: 'https://images.dusdusan.com/product/0Rjn51wr1729136982_1729136823981.jpg',
+      likes: 1,
+  },
+  {
+      id: 2,
+      name: 'Technoplast New Aoki Neon Bottle 800 Ml Set of 6',
+      price: 'Rp 102,900/Set',
+      imageUrl: 'https://images.dusdusan.com/product/PUcezcJO1729137216_1729137085304.jpg',
+      likes: 0, 
+  },
+  {
+      id: 3,
+      name: 'Clovertec Handheld Garment Steamer White 150Ml',
+      price: 'Rp 625,000/Unit',
+      imageUrl: 'https://images.dusdusan.com/product/9hRpUl5s1729140315_1729140184126.jpg',
+      likes: 0, 
+  },
+  {
+      id: 4,
+      name: 'Clovertec Handheld Garment Steamer Ultra Black 150Ml',
+      price: 'Rp 625,000/Unit',
+      imageUrl: 'https://images.dusdusan.com/product/OILWkl7i1729140545_1729140406719.jpg',
+      likes: 0, 
+  },
+  {
+      id: 5,
+      name: 'Clovertec Sandwich Maker 3 In 1 Rose Gum 500W',
+      price: 'Rp 499,000/Unit',
+      imageUrl: 'https://images.dusdusan.com/product/yWXGvlG61729141077_1729140946036.jpg',
+      likes: 2,
+  },
+];
