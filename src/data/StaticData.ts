@@ -99,3 +99,37 @@ export const brands: Brand[] = [
     link: '/brand/7',
   },
 ];
+
+export const bestSellingProducts = [
+  {
+      id: 1,
+      name: 'Cypruz Marble Cookware Set of 7 pcs',
+      price: 'Rp 969,000/Set',
+      imageUrl: 'https://nos.wjv-1.neo.id/images.dusdusan.com/product/1klRKmWX1665720641_1665720631356.jpg',
+  },
+  {
+      id: 2,
+      name: 'Technoplast Square Dishes Keeper 3 Susun Brown',
+      price: 'Rp 179,000/Set',
+      imageUrl: 'https://nos.wjv-1.neo.id/images.dusdusan.com/product/w3Cz7yG41719383994_1719383859282.jpg',
+  },
+  {
+      id: 3,
+      name: 'Bodimax New Running Machine',
+      price: 'Rp 3,680,000/Unit',
+      imageUrl: 'https://nos.wjv-1.neo.id/images.dusdusan.com/product/GHQXfMfw1675220738_1675220737961.jpg',
+      stockStatus: 'Hampir Habis',
+  },
+  {
+      id: 4,
+      name: 'Bambang Jumbo Food Container set 14 Pcs',
+      price: 'Rp 177,000/Dus',
+      imageUrl: 'https://nos.wjv-1.neo.id/images.dusdusan.com/product/AimOC2uD1696234445_1696234445738.jpg',
+  },
+  {
+      id: 5,
+      name: 'Value Kitchen Set of 5 Blue',
+      price: 'Rp 199,000/Set',
+      imageUrl: 'https://nos.wjv-1.neo.id/images.dusdusan.com/product/VqOn5VO91665736423_1665736422415.jpg',
+  },
+];

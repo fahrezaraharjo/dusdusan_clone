@@ -7,7 +7,7 @@ export interface ButtonProps {
     variant: 'filled' | 'outlined';
 }
 export interface NavigationProps {
-    categories?: string[]; // Make categories optional
+    categories?: string[];
 }
 export interface PromoItem {
     id: number;
@@ -22,7 +22,6 @@ export interface CategoryProduct {
     name: string;
     imageUrl: string;
 }
-
 export interface MenarikArticle {
     id: number;
     imageUrl: string;
@@ -30,16 +29,27 @@ export interface MenarikArticle {
     title: string;
     date: string;
 }
-
 export interface LinkButtonProps {
-    text: string; // Dynamic text like "Lihat Semua" or "Lihat Lebih Banyak"
-    href: string; // The link URL
-    variant?: 'yellow' | 'orange'; // Variants for different styles
-    className?: string; // Optional additional classes
+    text: string; 
+    href: string; 
+    variant?: 'yellow' | 'orange'; 
+    className?: string; 
 }
 export interface Brand {
     id: number;
     name: string;
     logoUrl: string;
     link: string;
+}
+export interface BannerSectionProps {
+    imageUrl: string;
+    altText: string;
+    link: string;
+}
+export interface Product {
+    id: number;
+    name: string;
+    price: string;
+    imageUrl: string;
+    stockStatus?: string;
 }
