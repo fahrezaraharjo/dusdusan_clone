@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeModeScript } from "flowbite-react";
 import Header from "@/components/layout/Header";
-import { ReduxProvider } from "./provider"; // Ensure ReduxProvider is a client component
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,7 +40,7 @@ export default function RootLayout({
           <div className="bg-[#000] max-w-[480px] w-full rounded shadow-lg flex flex-col items-center flex-wrap">
             <Header />
           </div>
-          <ReduxProvider>{children}</ReduxProvider>
+          {children}
           <div className="bg-black max-w-[480px] w-full">
             <h3 className="text-white text-center">Hello</h3>
           </div>
