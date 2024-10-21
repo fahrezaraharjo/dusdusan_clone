@@ -19,7 +19,7 @@ const MenarikUntukDisimak: React.FC<{ articles: MenarikArticle[] }> = ({ article
                         width={22}
                         height={22}
                     />
-                    <div className="text-lg font-semibold">Menarik untuk disimak</div>
+                    <div className="text-lg font-semibold text-gray-800">Menarik untuk disimak</div>
                 </div>
                 <LinkButton text="Lihat lebih banyak" href="/komunitas/artikel" variant="orange" />
             </div>
@@ -63,7 +63,7 @@ const ArticleRow: React.FC<{ article: MenarikArticle }> = React.memo(({ article 
             <div className="flex flex-col justify-between w-2/3 pl-3">
                 <div>
                     <div className="article-category-title text-xs text-orange-500">{article.category.categoryName}</div>
-                    <div className="article-title text-sm font-semibold line-clamp-2">{article.name}</div>
+                    <div className="article-title text-sm font-semibold line-clamp-2 text-gray-700">{article.name}</div>
                 </div>
                 <div className="text-[14px] font-semibold text-[#ffad00] mt-1">
                     {formatDate(article.publishDate)}
