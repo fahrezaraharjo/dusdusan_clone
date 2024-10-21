@@ -6,8 +6,8 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-white shadow-md p-4 sticky top-0 z-50 w-full max-w-[480px]">
-      <div className="flex flex-col md:flex-row justify-between items-center">
+    <header className="bg-white shadow-md p-4 sticky top-0 z-50 w-full w-full">
+      <div className="flex flex-row md:flex-row justify-between ">
         {/* Logo Section */}
         <div className="flex items-center">
           <Image
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Button Section */}
-        <div className="hidden md:flex space-x-4 mt-2 md:mt-0">
+        <div className="md:flex space-x-4 mt-2 md:mt-0">
           <Button text="Masuk" variant="outlined" />
           <Button text="Daftar" variant="filled" />
         </div>
