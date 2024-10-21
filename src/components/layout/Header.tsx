@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-white shadow-md p-4 sticky top-0 z-50 w-full w-full">
+    <header className="bg-white shadow-md p-4 sticky top-0 z-50 w-full max-w-[480px]">
       <div className="flex flex-row md:flex-row justify-between ">
         {/* Logo Section */}
         <div className="flex items-center">
