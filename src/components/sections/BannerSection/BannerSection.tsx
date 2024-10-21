@@ -4,7 +4,7 @@ import React from 'react';
 
 const BannerSection: React.FC<BannerSectionProps> = ({ imageUrl, altText, link }) => {
     return (
-        <div className="category-wrapper px-5 py-3">
+        <div className="px-5 py-3">
             <a href={link} target="_blank" rel="noopener noreferrer">
                 <Image
                     src={imageUrl}

@@ -15,8 +15,8 @@ const KategoriProduk: React.FC<KategoriProdukProps> = ({ categoriesProduct }) =>
         background: 'linear-gradient(-145deg, #ffffff, #f58120 30%, #ffac67)',
       }}
     >
-      <div className="bar text-white text-lg font-bold mb-3">Kategori Produk</div>
-      <div className="brands-wrapper grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 justify-between">
+      <div className="text-white text-lg font-bold mb-3">Kategori Produk</div>
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 justify-between">
         {categoriesProduct.map((category) => (
           <div key={category.id} className="brand w-full cursor-pointer">
             <div
@@ -32,7 +32,7 @@ const KategoriProduk: React.FC<KategoriProdukProps> = ({ categoriesProduct }) =>
               }}
             />
             <div
-              className="label text-white text-center mt-1 text-sm"
+              className="text-white text-center mt-1 text-sm"
               style={{
                 width: '100%',
                 margin: '10px 0',

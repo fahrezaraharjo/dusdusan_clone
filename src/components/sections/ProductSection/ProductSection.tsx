@@ -6,7 +6,7 @@ import { ProductSectionProps } from '@/types/Product.types';
 const ProductSection: React.FC<ProductSectionProps> = ({ title, backgroundClass, products, viewAllLink }) => {
   return (
     <div className="w-full">
-      <div className={`${backgroundClass} product-section-wrapper`} id="product-section">
+      <div className={`${backgroundClass}`} id="product-section">
         <div className="flex justify-between items-center font-bold text-black text-sm px-4 py-5">
           {title}
           <LinkButton text="Lihat Semua" href={viewAllLink} variant="orange" />
@@ -35,22 +35,22 @@ const ProductSection: React.FC<ProductSectionProps> = ({ title, backgroundClass,
 
                   {/* Product Details */}
                   <div className="p-3 flex flex-col flex-grow">
-                    <span className="name font-semibold text-lg text-gray-900 mb-2 h-12 overflow-hidden text-ellipsis break-words line-clamp-2">
+                    <span className="font-semibold text-lg text-gray-900 mb-2 h-12 overflow-hidden text-ellipsis break-words line-clamp-2">
                       {product.name}
                     </span>
                     <div className="flex-grow">
-                      <span className="price text-sm text-orange-400">{product.price}</span>
+                      <span className="text-sm text-orange-400">{product.price}</span>
                     </div>
                     {product.stockStatus && (
                       <span
-                        className={`stock-status text-xs mt-1 ${product.stockStatus === 'In Stock' ? 'text-green-600' : 'text-red-500'
+                        className={`text-xs mt-1 ${product.stockStatus === 'In Stock' ? 'text-green-600' : 'text-red-500'
                           }`}
                       >
                         {product.stockStatus}
                       </span>
                     )}
                     {product.likes && (
-                      <span className="likes text-xs mt-1 text-gray-500">
+                      <span className="text-xs mt-1 text-gray-500">
                         {product.likes} Likes
                       </span>
                     )}

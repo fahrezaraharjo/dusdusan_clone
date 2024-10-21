@@ -61,7 +61,7 @@ const InfoSection: React.FC = () => {
               width={100} 
               height={100}
             />
-            <div className="description text-center p-4 rounded-lg shadow-sm text-white">
+            <div className="text-center p-4 rounded-lg shadow-sm text-white">
               {item.description}
             </div>
           </div>

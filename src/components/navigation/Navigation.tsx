@@ -14,7 +14,7 @@ const Navigation: React.FC<NavigationProps> = memo(({ categories = [] }) => {
         {categories.map((category) => (
           <div
             key={category}
-            className="category p-1 text-white font-bold text-xs cursor-pointer transition-colors duration-200 hover:bg-teal-700 focus:bg-teal-800 focus:outline-none"
+            className="p-1 text-white font-bold text-xs cursor-pointer transition-colors duration-200 hover:bg-teal-700 focus:bg-teal-800 focus:outline-none"
             role="button"
             tabIndex={0}
             onKeyPress={(e) => e.key === 'Enter' && handleCategoryClick(category)} 
