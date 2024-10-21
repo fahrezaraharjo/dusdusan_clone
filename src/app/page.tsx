@@ -44,7 +44,7 @@ const Home: React.FC = () => {
       )}
 
       {/* Banner Section */}
-      <div className="flex flex-col items-start w-[480px] h-[485px] mt-1">
+      <div className="flex flex-col items-start w-full h-[485px] mt-1">
         {isCarouselLoading ? (
           <Skeleton height={485} width="100%" />
         ) : (
@@ -112,7 +112,7 @@ const Home: React.FC = () => {
       />
 
       {/* Info Section */}
-      <div className="flex flex-col items-start w-[480px] h-[485px] mt-1 ">
+      <div className="flex flex-col items-start w-full h-[485px] mt-1 ">
         {isLoading ? (
           <Skeleton height={485} width="100%" />
         ) : (
